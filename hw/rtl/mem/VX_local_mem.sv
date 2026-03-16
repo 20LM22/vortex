@@ -57,6 +57,7 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     localparam BANK_SEL_WIDTH  = `UP(BANK_SEL_BITS);
     localparam REQ_DATAW       = 1 + BANK_ADDR_WIDTH + WORD_SIZE + WORD_WIDTH + TAG_WIDTH;
     localparam RSP_DATAW       = WORD_WIDTH + TAG_WIDTH;
+    localparam CUT_FACTOR      = 2; // TODO: cut here
 
     `STATIC_ASSERT(ADDR_WIDTH == (BANK_ADDR_WIDTH + `CLOG2(NUM_BANKS)), ("invalid parameter"))
 
@@ -81,6 +82,17 @@ module VX_local_mem import VX_gpu_pkg::*; #(
 
     // bank requests dispatch
 
+    // Lauren: each request needs to know its "virtual" bank
+    localparam NUM_VIRTUAL_BANKS = NUM_BANKS >> CUT_FACTOR;
+    wire [NUM_REQS-1:0][BANK_SEL_WIDTH-1:0] req_v_bank_idx;
+    wire [BANK_SEL_WIDTH-1:0] v_bank_mask = NUM_BANKS >> CUT_FACTOR - 1;
+   
+    for (genvar i = 0; i < NUM_REQS; ++i) begin : g_req_virtual_bank_idxs
+        assign req_v_bank_idx[i] = req_bank_idx[i] & v_bank_mask;
+    end
+    // then each virtual bank needs a valid signal ==> actually maybe per_bank_req_valid could be used
+    wire [NUM_VIRTUAL_BANKS-1:0] req_v_bank_conflict = 0;
+
     wire [NUM_BANKS-1:0]                    per_bank_req_valid;
     wire [NUM_BANKS-1:0]                    per_bank_req_rw;
     wire [NUM_BANKS-1:0][BANK_ADDR_WIDTH-1:0] per_bank_req_addr;
@@ -101,7 +113,10 @@ module VX_local_mem import VX_gpu_pkg::*; #(
 `endif
 
     for (genvar i = 0; i < NUM_REQS; ++i) begin : g_req_data_in
-        assign req_valid_in[i] = mem_bus_if[i].req_valid;
+        # Lauren - valid request now depends on no v bank conflicts
+        # TODO: need to make sure that v bank conflicts are being marked as CONFLICT when one request gets made
+        # and then UNMAARKED when request is valid again
+        assign req_valid_in[i] = mem_bus_if[i].req_valid && req_v_bank_conflict[req_v_bank_idx[i]] === 0;
         assign req_data_in[i] = {
             mem_bus_if[i].req_data.rw,
             req_bank_addr[i],
@@ -111,6 +126,8 @@ module VX_local_mem import VX_gpu_pkg::*; #(
         };
         assign mem_bus_if[i].req_ready = req_ready_in[i];
     end
+
+    # each clock have the - how is vx stream xbar already handling multiple requests to same bank?
 
     VX_stream_xbar #(
         .NUM_INPUTS  (NUM_REQS),
