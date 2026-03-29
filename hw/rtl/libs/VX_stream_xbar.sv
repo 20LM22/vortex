@@ -43,6 +43,12 @@ module VX_stream_xbar #(
     `UNUSED_VAR (clk)
     `UNUSED_VAR (reset)
 
+    initial begin
+        $display("VX_stream_xbar %m:");
+        $display("  NUM_INPUTS   = %0d", NUM_INPUTS);
+        $display("  NUM_OUTPUTS  = %0d", NUM_OUTPUTS);
+    end
+
     if (NUM_INPUTS != 1) begin : g_multi_inputs
 
         if (NUM_OUTPUTS != 1) begin : g_multiple_outputs
@@ -86,7 +92,7 @@ module VX_stream_xbar #(
                 .data_out (per_output_valid_in_w)
             );
 
-            for (genvar i = 0; i < NUM_OUTPUTS; ++i) begin : g_xbar_arbs
+            for (genvar i = 0; i < NUM_OUTPUTS; ++i) begin : g_xbar_arbs // Lauren: it's going to make 4 of these arbiters and each one has 4 inputs and 1 output
                 VX_stream_arb #(
                     .NUM_INPUTS  (NUM_INPUTS),
                     .NUM_OUTPUTS (1),
@@ -97,7 +103,7 @@ module VX_stream_xbar #(
                 ) xbar_arb (
                     .clk       (clk),
                     .reset     (reset),
-                    .valid_in  (per_output_valid_in_w[i]),
+                    .valid_in  (per_output_valid_in_w[i]), // Lauren: should this get sent back around??
                     .data_in   (data_in),
                     .ready_in  (per_output_ready_in[i]),
                     .valid_out (valid_out[i]),

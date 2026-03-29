@@ -40,6 +40,14 @@ module VX_stream_arb #(
 
     output wire [SEL_COUNT-1:0][NUM_REQS_W-1:0] sel_out
 );
+
+    // initial begin
+    //     $display("VX_stream_arb %m:");
+    //     $display("  NUM_INPUTS   = %0d", NUM_INPUTS); // Lauren - this should be 4
+    //     $display("  NUM_OUTPUTS  = %0d", NUM_OUTPUTS); // Lauren - this should be 1
+    //     $display("  NUM_REQS   = %0d", NUM_REQS); // Lauren - so this should 4, meaning 1 arbiter/bank gets a 4-wide input to look at, corresponding to all of the inputs
+    // end
+
     if (NUM_INPUTS > NUM_OUTPUTS) begin : g_input_select
 
         // #Inputs > #Outputs

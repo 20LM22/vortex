@@ -104,6 +104,12 @@ module VX_mem_unit import VX_gpu_pkg::*; #(
         .mem_bus_if (lmem_adapt_if)
     );
 
+    initial begin
+        $display("VX_mem_unit %m:");
+        $display("  `NUM_LSU_LANES   = %0d", `NUM_LSU_LANES);
+        $display("  `LMEM_NUM_BANKS  = %0d", `LMEM_NUM_BANKS);
+    end
+
     VX_local_mem #(
         .INSTANCE_ID(`SFORMATF(("%s-lmem", INSTANCE_ID))),
         .SIZE       (1 << `LMEM_LOG_SIZE),
