@@ -119,19 +119,21 @@ module VX_local_mem import VX_gpu_pkg::*; #(
 `endif
 
     // Lauren -- should construct the vbank_req_valid_in here 
-    wire [NUM_REQS-1:0] vbank_req_valid_in; // need some way to link the req valid to the virtual bank it's trying to access
-    wire [NUM_REQS-1:0][BANK_SEL_WIDTH-1:0] req_v_bank_idx;
-    wire [NUM_REQS-1:0][2:0] shift_amount;
+    logic [NUM_REQS-1:0] vbank_req_valid_in; // need some way to link the req valid to the virtual bank it's trying to access
+    // `UNUSED_VAR (vbank_req_valid_in);
+    logic [NUM_REQS-1:0][BANK_SEL_WIDTH-1:0] req_v_bank_idx;
+    // logic [NUM_REQS-1:0][2:0] shift_amount;
     
     // find
     always_comb begin
         vbank_req_valid_in = 0;
         for (int i = 0; i < NUM_REQS; ++i) begin // we are going to determine which reqs can go forward
-            // from req_bank_idx[i] want to calculate virtual bank number, which is req_bank_idx[i] >> CUT_FACTOR - 1
-            shift_amount[i] = cut_factor == 1 ? 0 : cut_factor == 2 ? 1 : cut_factor == 4 ? 2 : 2; // can add more here
+            int shift_amount;
+            // int req_v_bank_idx;
+            shift_amount = cut_factor == 4 ? 2 : cut_factor == 2 ? 1 : 0;
             req_v_bank_idx[i] = req_bank_idx[i] >> shift_amount; // this is the virtual bank index for this request
             // then check if this virtual bank arbiter is selecting for this particular request
-            if (vbank_sel_out[req_v_bank_idx[i]] == i && vbank_valid_out[req_v_bank_idx[i]] == 1) begin
+            if (vbank_sel_out[req_v_bank_idx[i]] == REQ_SEL_WIDTH'(i) && vbank_valid_out[req_v_bank_idx[i]] == 1) begin
                 vbank_req_valid_in[i] = 1; // this request is valid and is selected by the virtual bank arbiter
             end
         end        
@@ -147,83 +149,88 @@ module VX_local_mem import VX_gpu_pkg::*; #(
             mem_bus_if[i].req_data.byteen,
             mem_bus_if[i].req_data.tag
         };
-        assign mem_bus_if[i].req_ready = req_ready_in[i];
+        assign mem_bus_if[i].req_ready = req_ready_in[i]; // && vbank_req_valid_in[i]; 
     end
 
-    // Lauren: set up virtual bank arbiter
-    reg[4:0] cut_factor = 2; // can be a power of 2 up to 32
-    wire [NUM_BANKS-1:0][NUM_REQS-1:0] vbank_valid_in; // not all of these will always be used
+    // Lauren: set up inputs to the virtual bank arbiter
+    reg[4:0] cut_factor = 4; // can be a power of 2 up to 32
+    logic [NUM_BANKS-1:0][NUM_REQS-1:0] vbank_valid_in; // not all of these will always be used
+    logic [NUM_BANKS-1:0][NUM_REQS-1:0] bank_valid_in;
+    wire [NUM_REQS-1:0] mem_bus_valids;
+
+    for (genvar i = 0; i < NUM_REQS; ++i) begin : g_mem_bus_valids
+        assign mem_bus_valids[i] = mem_bus_if[i].req_valid;
+    end
+
+    always_comb begin
+        bank_valid_in = '0;
+        for (int i = 0; i < NUM_REQS; ++i) begin
+            // plan: for each request, determine which real bank it's trying to access
+            bank_valid_in[req_bank_idx[i]][i] = mem_bus_valids[i];
+        end
+    end
     
     always_comb begin
         vbank_valid_in = 0;
         for (int i = 0; i < NUM_BANKS; ++i) begin
             case (cut_factor)
                 1: begin
-                    vbank_valid_in[i] = per_output_valid_in_w[i];
+                    vbank_valid_in[i] = bank_valid_in[i];
                 end
                 2: begin
-                    if (i < NUM_BANKS/2) begin // maybe go to manual cuts
-                        vbank_valid_in[i] = | per_output_valid_in_w[i*2 + 2 - 1:i*2];
+                    if (i < NUM_BANKS/2) begin
+                        vbank_valid_in[i] = bank_valid_in[i*2] | bank_valid_in[i*2+1];
                     end
                 end
                 4: begin
                     if (i < NUM_BANKS/4) begin
-                        vbank_valid_in[i] = | per_output_valid_in_w[i*4 + 4 - 1:i*4];
+                        vbank_valid_in[i] = bank_valid_in[i*4] | bank_valid_in[i*4+1] | bank_valid_in[i*4+2] | bank_valid_in[i*4+3];
                     end
                 end
             endcase
         end        
     end
 
+    // Lauren
+    wire [NUM_BANKS-1:0] vbank_valid_out;
+    wire [NUM_BANKS-1:0][REQ_SEL_WIDTH-1:0] vbank_sel_out;
+    wire [NUM_BANKS-1:0][NUM_REQS-1:0] vbank_onehot_out;
+    `UNUSED_VAR (vbank_onehot_out);
+
     // Lauren - need to take the output signals and use them to gate the inputs to the stream_xbar
+    // instead of stream arbs let's try to use just a simple priority encoder:
+    for (genvar i = 0; i < NUM_BANKS; ++i) begin : g_vbank_encoders
+        VX_priority_encoder #(
+            .N (NUM_REQS) // this is fine
+        ) grant_sel (
+            .data_in    (vbank_valid_in[i]),
+            .index_out  (vbank_sel_out[i]),
+            .onehot_out (vbank_onehot_out[i]),
+            .valid_out  (vbank_valid_out[i])
+        );
+    end
+
+    /*
     for (genvar i = 0; i < NUM_BANKS; ++i) begin : g_v_arbs // Lauren: it's going to make 4 of these arbiters and each one has 4 inputs and 1 output
         VX_stream_arb #(
             .NUM_INPUTS  (NUM_REQS), // this is correct
             .NUM_OUTPUTS (1), // this is correct
             .DATAW       (REQ_DATAW), // done
             .ARBITER     ("P"), // done
-            .STICKY      (0)
+            .STICKY      (0),
+            .OUT_BUF     (0)
         ) v_arb (
             .clk       (clk),
             .reset     (reset), 
             .valid_in  (vbank_valid_in[i]), // the ORed input
-            .data_in   (req_data_in),
+            .data_in   (raw_bus_data), // req_data_in
             .ready_in  (vbank_ready_in[i]), // might be able to use this to replace AND logic, something to try later
             .valid_out (vbank_valid_out[i]), // used to capture the output
             .data_out  (vbank_data_out[i]), // used to capture the output
             .sel_out   (vbank_sel_out[i]), // used to capture the output
-            .ready_out (1'b1) 
+            .ready_out (1'b1) // this needs to be changed so that we only say ready when xbar is ready to accept it
         );
-    end
-
-    // Lauren
-    wire [NUM_BANKS-1:0] vbank_valid_out;
-    wire [NUM_BANKS-1:0][REQ_DATAW-1:0] vbank_data_out;
-    wire [NUM_BANKS-1:0][REQ_SEL_WIDTH-1:0] vbank_sel_out;
-    wire [NUM_BANKS-1:0][NUM_REQS-1:0] vbank_ready_in;
-
-    // Lauren
-    wire [NUM_REQS-1:0][NUM_BANKS-1:0] per_output_valid_in;
-    wire [NUM_BANKS-1:0][NUM_REQS-1:0] per_output_valid_in_w;
-
-    for (genvar i = 0; i < NUM_REQS; ++i) begin : g_sel_in_demux
-        VX_demux #(
-            .DATAW (1),
-            .N (1)
-        ) sel_in_demux (
-            .sel_in   (req_bank_idx[i]), 
-            .data_in  (req_valid_in[i]), 
-            .data_out (per_output_valid_in[i])
-        );
-    end
-
-    VX_transpose #( // Lauren added
-        .N (NUM_REQS),
-        .M (NUM_BANKS)
-    ) val_in_transpose (
-        .data_in (per_output_valid_in),
-        .data_out (per_output_valid_in_w)
-    );
+    end */
 
     VX_stream_xbar #(
         .NUM_INPUTS  (NUM_REQS),
