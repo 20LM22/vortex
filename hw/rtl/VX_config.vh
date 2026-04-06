@@ -251,7 +251,7 @@
 `define RESET_DELAY     8
 
 `ifndef STALL_TIMEOUT
-`define STALL_TIMEOUT   (100000 * (1 ** (`L2_ENABLED + `L3_ENABLED)))
+`define STALL_TIMEOUT   (1000000 * (1 ** (`L2_ENABLED + `L3_ENABLED))) // Lauren changed to 10x
 `endif
 
 `ifndef SV_DPI

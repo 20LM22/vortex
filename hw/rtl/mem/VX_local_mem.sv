@@ -111,7 +111,7 @@ module VX_local_mem import VX_gpu_pkg::*; #(
         for (int i = 0; i < NUM_REQS; ++i) begin // we are going to determine which reqs can go forward
             int shift_amount;
             // int req_v_bank_idx;
-            shift_amount = cut_factor == 4 ? 2 : cut_factor == 2 ? 1 : 0;
+            shift_amount = cut_factor == 32 ? 5 : cut_factor == 16 ? 4 : cut_factor == 8 ? 3 : cut_factor == 4 ? 2 : cut_factor == 2 ? 1 : 0;
             req_v_bank_idx[i] = req_bank_idx[i] >> shift_amount; // this is the virtual bank index for this request
             // then check if this virtual bank arbiter is selecting for this particular request
             if (vbank_sel_out[req_v_bank_idx[i]] == REQ_SEL_WIDTH'(i) && vbank_valid_out[req_v_bank_idx[i]] == 1) begin
@@ -130,8 +130,8 @@ module VX_local_mem import VX_gpu_pkg::*; #(
             mem_bus_if[i].req_data.byteen,
             mem_bus_if[i].req_data.tag
         };
-        assign mem_bus_if[i].req_ready = req_ready_in[i]; // && vbank_req_valid_in[i]; 
-    end
+        assign mem_bus_if[i].req_ready = req_ready_in[i] && vbank_req_valid_in[i]; 
+    end // Lauren: try this commented in
 
     // Lauren: set up inputs to the virtual bank arbiter
     reg[5:0] cut_factor = 1; // can be a power of 2 up to 32
@@ -173,6 +173,21 @@ module VX_local_mem import VX_gpu_pkg::*; #(
                 4: begin
                     if (i < NUM_BANKS/4) begin
                         vbank_valid_in[i] = bank_valid_in[i*4] | bank_valid_in[i*4+1] | bank_valid_in[i*4+2] | bank_valid_in[i*4+3];
+                    end
+                end
+                8: begin
+                    if (i < NUM_BANKS/8) begin
+                        vbank_valid_in[i] = bank_valid_in[i*8] | bank_valid_in[i*8+1] | bank_valid_in[i*8+2] | bank_valid_in[i*8+3] | bank_valid_in[i*8+4] | bank_valid_in[i*8+5] | bank_valid_in[i*8+6] | bank_valid_in[i*8+7];
+                    end
+                end
+                16: begin
+                    if (i < NUM_BANKS/16) begin
+                        vbank_valid_in[i] = bank_valid_in[i*16] | bank_valid_in[i*16+1] | bank_valid_in[i*16+2] | bank_valid_in[i*16+3] | bank_valid_in[i*16+4] | bank_valid_in[i*16+5] | bank_valid_in[i*16+6] | bank_valid_in[i*16+7] | bank_valid_in[i*16+8] | bank_valid_in[i*16+9] | bank_valid_in[i*16+10] | bank_valid_in[i*16+11] | bank_valid_in[i*16+12] | bank_valid_in[i*16+13] | bank_valid_in[i*16+14] | bank_valid_in[i*16+15];
+                    end
+                end
+                32: begin
+                    if (i < NUM_BANKS/32) begin
+                        vbank_valid_in[i] = bank_valid_in[i*32] | bank_valid_in[i*32+1] | bank_valid_in[i*32+2] | bank_valid_in[i*32+3] | bank_valid_in[i*32+4] | bank_valid_in[i*32+5] | bank_valid_in[i*32+6] | bank_valid_in[i*32+7] | bank_valid_in[i*32+8] | bank_valid_in[i*32+9] | bank_valid_in[i*32+10] | bank_valid_in[i*32+11] | bank_valid_in[i*32+12] | bank_valid_in[i*32+13] | bank_valid_in[i*32+14] | bank_valid_in[i*32+15] | bank_valid_in[i*32+16] | bank_valid_in[i*32+17] | bank_valid_in[i*32+18] | bank_valid_in[i*32+19] | bank_valid_in[i*32+20] | bank_valid_in[i*32+21] | bank_valid_in[i*32+22] | bank_valid_in[i*32+23] | bank_valid_in[i*32+24] | bank_valid_in[i*32+25] | bank_valid_in[i*32+26] | bank_valid_in[i*32+27] | bank_valid_in[i*32+28] | bank_valid_in[i*32+29] | bank_valid_in[i*32+30] | bank_valid_in[i*32+31];
                     end
                 end
             endcase

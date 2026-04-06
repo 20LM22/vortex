@@ -1,24 +1,24 @@
 DEBUG: Processing argument: --cores=4
 DEBUG: Processing argument: --warps=4
-DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --threads=4
 DEBUG: Processing argument: --app=sgemm2
 DEBUG: Processing argument: --driver=rtlsim
 DEBUG: Processing argument: --cutfactor=32
 DEBUG: Processing argument: --cutcycle=10000
 DEBUG: Processing argument: --perf=2
 DEBUG: Processing argument: --args=-n128 -t32
-CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE
-Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
 Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
 make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
 LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
 open device connection
-CONFIGS: num_threads=32, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
+CONFIGS: num_threads=4, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
 data type: float
 matrix size: 128x128
 tile size: 32x32
 local memory: 8192 bytes
-Error: cannot schedule kernel with group_size > threads_per_core (1024,128)
+Error: cannot schedule kernel with group_size > threads_per_core (1024,16)
 Error: 'vx_check_occupancy(device, group_size, &max_localmem)' returned -1!
 PERF: core0: lmem reads=-4995072469926809587
 PERF: core0: lmem writes=-4995072469926809587
@@ -83,25 +83,25 @@ PERF: instrs=-1533545805997686732, cycles=-4995072469926809587, IPC=1.257331
 make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
 DEBUG: Processing argument: --cores=4
 DEBUG: Processing argument: --warps=4
-DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --threads=4
 DEBUG: Processing argument: --app=sgemm2
 DEBUG: Processing argument: --driver=rtlsim
 DEBUG: Processing argument: --cutfactor=16
 DEBUG: Processing argument: --cutcycle=10000
 DEBUG: Processing argument: --perf=2
 DEBUG: Processing argument: --args=-n128 -t32
-CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=16 -DCUT_CYCLE=10000 -DPERF_ENABLE
-Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=16 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=16 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=16 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
 Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
 make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
 LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
 open device connection
-CONFIGS: num_threads=32, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
+CONFIGS: num_threads=4, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
 data type: float
 matrix size: 128x128
 tile size: 32x32
 local memory: 8192 bytes
-Error: cannot schedule kernel with group_size > threads_per_core (1024,128)
+Error: cannot schedule kernel with group_size > threads_per_core (1024,16)
 Error: 'vx_check_occupancy(device, group_size, &max_localmem)' returned -1!
 PERF: core0: lmem reads=-4995072469926809587
 PERF: core0: lmem writes=-4995072469926809587
@@ -166,25 +166,25 @@ PERF: instrs=-1533545805997686732, cycles=-4995072469926809587, IPC=1.257331
 make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
 DEBUG: Processing argument: --cores=4
 DEBUG: Processing argument: --warps=4
-DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --threads=4
 DEBUG: Processing argument: --app=sgemm2
 DEBUG: Processing argument: --driver=rtlsim
 DEBUG: Processing argument: --cutfactor=8
 DEBUG: Processing argument: --cutcycle=10000
 DEBUG: Processing argument: --perf=2
 DEBUG: Processing argument: --args=-n128 -t32
-CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=8 -DCUT_CYCLE=10000 -DPERF_ENABLE
-Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=8 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=8 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=8 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
 Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
 make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
 LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
 open device connection
-CONFIGS: num_threads=32, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
+CONFIGS: num_threads=4, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
 data type: float
 matrix size: 128x128
 tile size: 32x32
 local memory: 8192 bytes
-Error: cannot schedule kernel with group_size > threads_per_core (1024,128)
+Error: cannot schedule kernel with group_size > threads_per_core (1024,16)
 Error: 'vx_check_occupancy(device, group_size, &max_localmem)' returned -1!
 PERF: core0: lmem reads=-4995072469926809587
 PERF: core0: lmem writes=-4995072469926809587
@@ -249,25 +249,25 @@ PERF: instrs=-1533545805997686732, cycles=-4995072469926809587, IPC=1.257331
 make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
 DEBUG: Processing argument: --cores=4
 DEBUG: Processing argument: --warps=4
-DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --threads=4
 DEBUG: Processing argument: --app=sgemm2
 DEBUG: Processing argument: --driver=rtlsim
 DEBUG: Processing argument: --cutfactor=4
 DEBUG: Processing argument: --cutcycle=10000
 DEBUG: Processing argument: --perf=2
 DEBUG: Processing argument: --args=-n128 -t32
-CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE
-Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
 Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
 make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
 LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
 open device connection
-CONFIGS: num_threads=32, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
+CONFIGS: num_threads=4, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
 data type: float
 matrix size: 128x128
 tile size: 32x32
 local memory: 8192 bytes
-Error: cannot schedule kernel with group_size > threads_per_core (1024,128)
+Error: cannot schedule kernel with group_size > threads_per_core (1024,16)
 Error: 'vx_check_occupancy(device, group_size, &max_localmem)' returned -1!
 PERF: core0: lmem reads=-4995072469926809587
 PERF: core0: lmem writes=-4995072469926809587
@@ -332,25 +332,25 @@ PERF: instrs=-1533545805997686732, cycles=-4995072469926809587, IPC=1.257331
 make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
 DEBUG: Processing argument: --cores=4
 DEBUG: Processing argument: --warps=4
-DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --threads=4
 DEBUG: Processing argument: --app=sgemm2
 DEBUG: Processing argument: --driver=rtlsim
 DEBUG: Processing argument: --cutfactor=2
 DEBUG: Processing argument: --cutcycle=10000
 DEBUG: Processing argument: --perf=2
 DEBUG: Processing argument: --args=-n128 -t32
-CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE
-Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
 Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
 make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
 LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
 open device connection
-CONFIGS: num_threads=32, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
+CONFIGS: num_threads=4, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
 data type: float
 matrix size: 128x128
 tile size: 32x32
 local memory: 8192 bytes
-Error: cannot schedule kernel with group_size > threads_per_core (1024,128)
+Error: cannot schedule kernel with group_size > threads_per_core (1024,16)
 Error: 'vx_check_occupancy(device, group_size, &max_localmem)' returned -1!
 PERF: core0: lmem reads=-4995072469926809587
 PERF: core0: lmem writes=-4995072469926809587
@@ -415,25 +415,25 @@ PERF: instrs=-1533545805997686732, cycles=-4995072469926809587, IPC=1.257331
 make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
 DEBUG: Processing argument: --cores=4
 DEBUG: Processing argument: --warps=4
-DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --threads=4
 DEBUG: Processing argument: --app=sgemm2
 DEBUG: Processing argument: --driver=rtlsim
 DEBUG: Processing argument: --cutfactor=1
 DEBUG: Processing argument: --cutcycle=10000
 DEBUG: Processing argument: --perf=2
 DEBUG: Processing argument: --args=-n128 -t32
-CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE
-Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=32 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=4 -DNUM_THREADS=4 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
 Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
 make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
 LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
 open device connection
-CONFIGS: num_threads=32, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
+CONFIGS: num_threads=4, num_warps=4, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=2
 data type: float
 matrix size: 128x128
 tile size: 32x32
 local memory: 8192 bytes
-Error: cannot schedule kernel with group_size > threads_per_core (1024,128)
+Error: cannot schedule kernel with group_size > threads_per_core (1024,16)
 Error: 'vx_check_occupancy(device, group_size, &max_localmem)' returned -1!
 PERF: core0: lmem reads=-4995072469926809587
 PERF: core0: lmem writes=-4995072469926809587

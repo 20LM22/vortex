@@ -1,0 +1,180 @@
+DEBUG: Processing argument: --cores=4
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=32
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t32
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 128x128
+tile size: 32x32
+local memory: 8192 bytes
+occupancy: max_localmem=16384 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x20000
+C_addr=0x30000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+[1807325] %Error: VX_scoreboard.sv:239: Assertion failed in TOP.rtlsim_shim.vortex.g_clusters[0].cluster.g_sockets[0].socket.g_cores[1].core.issue.g_slices[0].issue_slice.scoreboard.g_scoreboard[2]:              1807325: *** cluster0-socket0-core1-issue0-scoreboard timeout: wid=2, PC=0x80000230, tmask=11111111111111111111111111111111, cycles=100000, inuse=0101 (#0)
+%Error: /home/vortex/hw/rtl/core/VX_scoreboard.sv:239: Verilog $stop
+Aborting...
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
+DEBUG: Processing argument: --cores=4
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=16
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t32
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=16 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=16 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 128x128
+tile size: 32x32
+local memory: 8192 bytes
+occupancy: max_localmem=16384 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x20000
+C_addr=0x30000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+[1807325] %Error: VX_scoreboard.sv:239: Assertion failed in TOP.rtlsim_shim.vortex.g_clusters[0].cluster.g_sockets[0].socket.g_cores[1].core.issue.g_slices[0].issue_slice.scoreboard.g_scoreboard[2]:              1807325: *** cluster0-socket0-core1-issue0-scoreboard timeout: wid=2, PC=0x80000230, tmask=11111111111111111111111111111111, cycles=100000, inuse=0101 (#0)
+%Error: /home/vortex/hw/rtl/core/VX_scoreboard.sv:239: Verilog $stop
+Aborting...
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
+DEBUG: Processing argument: --cores=4
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=8
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t32
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=8 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=8 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 128x128
+tile size: 32x32
+local memory: 8192 bytes
+occupancy: max_localmem=16384 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x20000
+C_addr=0x30000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+[1807325] %Error: VX_scoreboard.sv:239: Assertion failed in TOP.rtlsim_shim.vortex.g_clusters[0].cluster.g_sockets[0].socket.g_cores[1].core.issue.g_slices[0].issue_slice.scoreboard.g_scoreboard[2]:              1807325: *** cluster0-socket0-core1-issue0-scoreboard timeout: wid=2, PC=0x80000230, tmask=11111111111111111111111111111111, cycles=100000, inuse=0101 (#0)
+%Error: /home/vortex/hw/rtl/core/VX_scoreboard.sv:239: Verilog $stop
+Aborting...
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
+DEBUG: Processing argument: --cores=4
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=4
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t32
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 128x128
+tile size: 32x32
+local memory: 8192 bytes
+occupancy: max_localmem=16384 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x20000
+C_addr=0x30000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+[5518769] %Error: VX_scoreboard.sv:239: Assertion failed in TOP.rtlsim_shim.vortex.g_clusters[0].cluster.g_sockets[0].socket.g_cores[3].core.issue.g_slices[1].issue_slice.scoreboard.g_scoreboard[7]:              5518769: *** cluster0-socket0-core3-issue1-scoreboard timeout: wid=7, PC=0x80000200, tmask=11111111111111111111111111111111, cycles=100000, inuse=0000 (#0)
+%Error: /home/vortex/hw/rtl/core/VX_scoreboard.sv:239: Verilog $stop
+Aborting...
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
+DEBUG: Processing argument: --cores=4
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=2
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t32
+CONFIGS=-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=4 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./build/ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n128 -t32" make -C "./build/ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+LD_LIBRARY_PATH=/home/vortex/build/runtime::/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t32
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=4, num_clusters=1, socket_size=4, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 128x128
+tile size: 32x32
+local memory: 8192 bytes
+occupancy: max_localmem=16384 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x20000
+C_addr=0x30000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+[3608919] %Error: VX_scoreboard.sv:239: Assertion failed in TOP.rtlsim_shim.vortex.g_clusters[0].cluster.g_sockets[0].socket.g_cores[1].core.issue.g_slices[1].issue_slice.scoreboard.g_scoreboard[2]:              3608919: *** cluster0-socket0-core1-issue1-scoreboard timeout: wid=2, PC=0x80000150, tmask=11111111111111111111111111111111, cycles=100000, inuse=0000 (#0)
+%Error: /home/vortex/hw/rtl/core/VX_scoreboard.sv:239: Verilog $stop
+Aborting...
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
