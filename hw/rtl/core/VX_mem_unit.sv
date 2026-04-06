@@ -25,7 +25,9 @@ module VX_mem_unit import VX_gpu_pkg::*; #(
 `endif
 
     VX_lsu_mem_if.slave     lsu_mem_if [`NUM_LSU_BLOCKS],
-    VX_mem_bus_if.master    dcache_bus_if [DCACHE_NUM_REQS]
+    VX_mem_bus_if.master    dcache_bus_if [DCACHE_NUM_REQS],
+    VX_sched_csr_if.slave   sched_csr_if // Lauren added
+
 );
     VX_lsu_mem_if #(
         .NUM_LANES (`NUM_LSU_LANES),
@@ -104,11 +106,11 @@ module VX_mem_unit import VX_gpu_pkg::*; #(
         .mem_bus_if (lmem_adapt_if)
     );
 
-    initial begin
-        $display("VX_mem_unit %m:");
-        $display("  `NUM_LSU_LANES   = %0d", `NUM_LSU_LANES);
-        $display("  `LMEM_NUM_BANKS  = %0d", `LMEM_NUM_BANKS);
-    end
+    // initial begin
+    //     $display("VX_mem_unit %m:");
+    //     $display("  `NUM_LSU_LANES   = %0d", `NUM_LSU_LANES);
+    //     $display("  `LMEM_NUM_BANKS  = %0d", `LMEM_NUM_BANKS);
+    // end
 
     VX_local_mem #(
         .INSTANCE_ID(`SFORMATF(("%s-lmem", INSTANCE_ID))),
@@ -125,7 +127,8 @@ module VX_mem_unit import VX_gpu_pkg::*; #(
     `ifdef PERF_ENABLE
         .lmem_perf  (lmem_perf),
     `endif
-        .mem_bus_if (lmem_adapt_if)
+        .mem_bus_if (lmem_adapt_if),
+        .sched_csr_if (sched_csr_if) // Lauren added
     );
 
 `else

@@ -43,7 +43,8 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     output lmem_perf_t lmem_perf,
 `endif
 
-    VX_mem_bus_if.slave mem_bus_if [NUM_REQS]
+    VX_mem_bus_if.slave     mem_bus_if [NUM_REQS],
+    VX_sched_csr_if.slave   sched_csr_if // Lauren added
 );
     `UNUSED_SPARAM (INSTANCE_ID)
 
@@ -57,7 +58,6 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     localparam BANK_SEL_WIDTH  = `UP(BANK_SEL_BITS);
     localparam REQ_DATAW       = 1 + BANK_ADDR_WIDTH + WORD_SIZE + WORD_WIDTH + TAG_WIDTH;
     localparam RSP_DATAW       = WORD_WIDTH + TAG_WIDTH;
-    // localparam CUT_FACTOR      = 2; // TODO: cut here
 
     `STATIC_ASSERT(ADDR_WIDTH == (BANK_ADDR_WIDTH + `CLOG2(NUM_BANKS)), ("invalid parameter"))
 
@@ -78,25 +78,6 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     for (genvar i = 0; i < NUM_REQS; ++i) begin : g_req_bank_addr
         assign req_bank_addr[i] = mem_bus_if[i].req_data.addr[BANK_SEL_BITS +: BANK_ADDR_WIDTH];
         `UNUSED_VAR (mem_bus_if[i].req_data.flags)
-    end
-
-    // bank requests dispatch
-
-    // Lauren: each request needs to know its "virtual" bank
-    // localparam NUM_VIRTUAL_BANKS = NUM_BANKS >> CUT_FACTOR;
-    // wire [NUM_REQS-1:0][BANK_SEL_WIDTH-1:0] req_v_bank_idx;
-    // wire [BANK_SEL_WIDTH-1:0] v_bank_mask = NUM_BANKS >> CUT_FACTOR - 1;
-   
-    // for (genvar i = 0; i < NUM_REQS; ++i) begin : g_req_virtual_bank_idxs
-    //    assign req_v_bank_idx[i] = req_bank_idx[i] & v_bank_mask;
-    // end
-    // then each virtual bank needs a valid signal ==> actually maybe per_bank_req_valid could be used
-    // wire [NUM_VIRTUAL_BANKS-1:0] req_v_bank_conflict = 0;
-
-    initial begin
-        $display("VX_local_mem %m:");
-        $display("  NUM_REQS   = %0d", NUM_REQS);
-        $display("  NUM_BANKS  = %0d", NUM_BANKS);
     end
 
     wire [NUM_BANKS-1:0]                    per_bank_req_valid;
@@ -153,7 +134,14 @@ module VX_local_mem import VX_gpu_pkg::*; #(
     end
 
     // Lauren: set up inputs to the virtual bank arbiter
-    reg[4:0] cut_factor = 4; // can be a power of 2 up to 32
+    reg[5:0] cut_factor = 1; // can be a power of 2 up to 32
+    always @(posedge clk) begin // TODO: get the cycle count from somewhere
+        if (sched_csr_if.cycles >= `CUT_CYCLE) begin // TODO: pick a number - 15000 is ok for sgemm2, should be closer to 150000 for larger sgemm
+            cut_factor <= `CUT_FACTOR; // TODO: add line in config to pass along desired cut factor
+            // $display("DEBUG: Cycle %d reached! Switching cut_factor to %d", `CUT_CYCLE, `CUT_FACTOR);
+        end
+    end
+
     logic [NUM_BANKS-1:0][NUM_REQS-1:0] vbank_valid_in; // not all of these will always be used
     logic [NUM_BANKS-1:0][NUM_REQS-1:0] bank_valid_in;
     wire [NUM_REQS-1:0] mem_bus_valids;
@@ -209,28 +197,6 @@ module VX_local_mem import VX_gpu_pkg::*; #(
             .valid_out  (vbank_valid_out[i])
         );
     end
-
-    /*
-    for (genvar i = 0; i < NUM_BANKS; ++i) begin : g_v_arbs // Lauren: it's going to make 4 of these arbiters and each one has 4 inputs and 1 output
-        VX_stream_arb #(
-            .NUM_INPUTS  (NUM_REQS), // this is correct
-            .NUM_OUTPUTS (1), // this is correct
-            .DATAW       (REQ_DATAW), // done
-            .ARBITER     ("P"), // done
-            .STICKY      (0),
-            .OUT_BUF     (0)
-        ) v_arb (
-            .clk       (clk),
-            .reset     (reset), 
-            .valid_in  (vbank_valid_in[i]), // the ORed input
-            .data_in   (raw_bus_data), // req_data_in
-            .ready_in  (vbank_ready_in[i]), // might be able to use this to replace AND logic, something to try later
-            .valid_out (vbank_valid_out[i]), // used to capture the output
-            .data_out  (vbank_data_out[i]), // used to capture the output
-            .sel_out   (vbank_sel_out[i]), // used to capture the output
-            .ready_out (1'b1) // this needs to be changed so that we only say ready when xbar is ready to accept it
-        );
-    end */
 
     VX_stream_xbar #(
         .NUM_INPUTS  (NUM_REQS),

@@ -51,11 +51,13 @@ DEFAULTS() {
     CONFIGS="$CONFIGS"
     TEMPBUILD=0
     LOGFILE=run.log
+    TEST=0
 }
 
 parse_args() {
     DEFAULTS
     for i in "$@"; do
+        echo "DEBUG: Processing argument: $i"
         case $i in
             --driver=*) DRIVER=${i#*=} ;;
             --app=*)    APP=${i#*=} ;;
@@ -71,6 +73,8 @@ parse_args() {
             --args=*)   HAS_ARGS=1; ARGS=${i#*=} ;;
             --log=*)    LOGFILE=${i#*=} ;;
             --nohup)    TEMPBUILD=1 ;;
+            --cutfactor=*) CONFIGS=$(add_option "$CONFIGS" "-DCUT_FACTOR=${i#*=}") ;;
+            --cutcycle=*) CONFIGS=$(add_option "$CONFIGS" "-DCUT_CYCLE=${i#*=}") ;;
             --help)     show_help; exit 0 ;;
             *)          show_usage; exit 1 ;;
         esac

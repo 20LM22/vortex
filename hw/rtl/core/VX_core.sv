@@ -208,7 +208,8 @@ module VX_core import VX_gpu_pkg::*; #(
         .coalescer_perf(coalescer_perf),
     `endif
         .lsu_mem_if    (lsu_mem_if),
-        .dcache_bus_if (dcache_bus_if)
+        .dcache_bus_if (dcache_bus_if),
+        .sched_csr_if  (sched_csr_if) // Lauren added
     );
 
 `ifdef PERF_ENABLE

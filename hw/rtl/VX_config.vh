@@ -90,6 +90,14 @@
 `define VLEN (4 * `XLEN)
 `endif
 
+`ifndef CUT_FACTOR // Lauren added
+`define CUT_FACTOR 1
+`endif
+
+`ifndef CUT_CYCLE // Lauren added
+`define CUT_CYCLE 1
+`endif
+
 `ifndef NUM_CLUSTERS
 `define NUM_CLUSTERS 1
 `endif

@@ -43,11 +43,11 @@ module VX_stream_xbar #(
     `UNUSED_VAR (clk)
     `UNUSED_VAR (reset)
 
-    initial begin
-        $display("VX_stream_xbar %m:");
-        $display("  NUM_INPUTS   = %0d", NUM_INPUTS);
-        $display("  NUM_OUTPUTS  = %0d", NUM_OUTPUTS);
-    end
+    // initial begin
+    //     $display("VX_stream_xbar %m:");
+    //     $display("  NUM_INPUTS   = %0d", NUM_INPUTS);
+    //     $display("  NUM_OUTPUTS  = %0d", NUM_OUTPUTS);
+    // end
 
     if (NUM_INPUTS != 1) begin : g_multi_inputs
 

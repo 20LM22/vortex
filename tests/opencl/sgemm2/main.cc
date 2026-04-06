@@ -139,7 +139,7 @@ static void cleanup() {
   if (kernel_bin) free(kernel_bin);
 }
 
-uint32_t size = 16;
+uint32_t size = 64; // Lauren changed
 
 static void show_usage() {
   printf("Usage: [-n size] [-h: help]\n");
@@ -151,6 +151,13 @@ static void parse_args(int argc, char **argv) {
     switch (c) {
     case 'n':
       size = atoi(optarg);
+      // n = atoi(optarg);
+      break;
+    case 'm': // Lauren added these
+      m = atoi(optarg);
+      break;
+    case 'k':
+      k = atoi(optarg);
       break;
     case 'h':
       show_usage();
