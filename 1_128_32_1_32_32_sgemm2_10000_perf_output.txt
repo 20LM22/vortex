@@ -1,0 +1,1 @@
+PERF: instrs=22679362, cycles=6511553, IPC=3.482942

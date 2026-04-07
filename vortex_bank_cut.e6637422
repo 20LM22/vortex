@@ -1,0 +1,209 @@
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_h76d00735__0.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_cache_bypass__pi10__DepSet_h0e9f7106__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__10.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_trace_pkg__DepSet_h9df89012__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_h76d00735__2.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__12.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_schedule_if__DepSet_hb0fc5ff1__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__3.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_mem_bus_if__D40_T6__DepSet_h3ed43ac6__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_h76d00735__1.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_h76d00735__3.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__2.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024unit__DepSet_hace02784__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fetch_if__DepSet_h43c9af56__0.o] Error 1
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__15.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_hf4ff1b3b__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__1.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__2.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__7.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__11.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__8.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__1.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__4.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_issue_sched_if__DepSet_h5127c572__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__9.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__6.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__5.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__14.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_decode_if__DepSet_hec0ff856__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__13.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__7.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__10.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__3.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_mem_bus_if__D40_T7__DepSet_h5f5c0e7f__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_mem_bus_if__D4_T2__DepSet_hc46aa700__0.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__4.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_mem_bus_if__D4_T6__DepSet_hdf425032__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_result_if__Tz90__DepSet_h36a371f0__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_lsu_mem_if__N20_D4_T2__DepSet_hb5f4059b__0.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_mem_bus_if__D40_T5__DepSet_hcdc2fd35__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__5.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__6.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__9.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__8.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_execute_if__Tz99__DepSet_h226ceb36__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_result_if__Tz100__DepSet_h7326c253__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_lsu_mem_if__N2_D40_T5__DepSet_h84ead824__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_execute_if__Tz104__DepSet_h41321fda__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_scoreboard_if__DepSet_hb42751bf__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_result_if__Tz105__DepSet_h3994bef1__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_cache_tags__pi52__DepSet_he7aef010__0.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_result_if__Tz109__DepSet_h2ca1a912__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_arb__pi57__DepSet_hf8ef705e__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_transpose__N20_M20__DepSet_h8cda0835__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_transpose__N20_M20__DepSet_h8cda0835__1.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_arb__pi57__DepSet_h4b3a10e9__0.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_arb__N20_D2e_Az17_O3__DepSet_h97f35f6b__0.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_arb__N20_D2e_Az17_O3__DepSet_h6678c009__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_operands_if__DepSet_h63796706__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_ibuffer_if__DepSet_h9e6b7012__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_xbar__N3_Az116__DepSet_heeb3847c__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_arb__N20_D22_Az17_O3__DepSet_haa501978__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_arb__N20_D2e_Az17_O3__DepSet_h207dcee8__0.o] Error 1
+cc1plus: error: one or more PCH files were found, but they were invalid
+compilation terminated due to -Wfatal-errors.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_stream_xbar__N3_Az116__DepSet_hccf8e943__0.o] Error 1
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_writeback_if__DepSet_hbec6a2fd__0.o] Error 1
+%Error: make -C /home/vortex/build/runtime/rtlsim/../librtlsim.so.obj_dir -f Vrtlsim_shim.mk -j 192 exited with 2
+%Error: Command Failed ulimit -s unlimited 2>/dev/null; exec /home/tools/verilator/share/verilator/bin/verilator_bin --build --exe --language 1800-2009 --assert -Wall -Wpedantic -Wno-DECLFILENAME -Wno-REDEFMACRO --x-initial unique --x-assign unique verilator.vlt -DSIMULATION -DSV_DPI -DXLEN_32 -DNUM_CORES=1 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE -I/home/vortex/sim/rtlsim -I/home/vortex/hw/rtl -I/home/vortex/hw/dpi -I/home/vortex/hw/rtl/libs -I/home/vortex/hw/rtl/interfaces -I/home/vortex/hw/rtl/core -I/home/vortex/hw/rtl/mem -I/home/vortex/hw/rtl/cache -I/home/vortex/hw/rtl/fpu /home/vortex/hw/rtl/VX_gpu_pkg.sv /home/vortex/hw/rtl/fpu/VX_fpu_pkg.sv /home/vortex/hw/rtl/VX_trace_pkg.sv --cc rtlsim_shim --top-module rtlsim_shim -j 192 -DNDEBUG /home/vortex/sim/common/util.cpp /home/vortex/sim/common/mem.cpp /home/vortex/sim/common/softfloat_ext.cpp /home/vortex/sim/common/rvfloats.cpp /home/vortex/sim/common/dram_sim.cpp /home/vortex/hw/dpi/util_dpi.cpp /home/vortex/hw/dpi/float_dpi.cpp /home/vortex/sim/rtlsim/processor.cpp -CFLAGS -std=c++17\ -Wall\ -Wextra\ -Wfatal-errors\ -Wno-array-bounds\ -fPIC\ -Wno-maybe-uninitialized\ -I/home/vortex/build/hw\ -I/home/vortex/sim/common\ -I/home/vortex/third_party/softfloat/source/include\ -I/home/vortex/third_party/ramulator/ext/spdlog/include\ -I/home/vortex/third_party/ramulator/ext/yaml-cpp/include\ -I/home/vortex/third_party/ramulator/src\ -DXLEN_32\ -DNUM_CORES=1\ -DNUM_WARPS=32\ -DNUM_THREADS=32\ -DCUT_FACTOR=1\ -DCUT_CYCLE=10000\ -DPERF_ENABLE\ -O2\ -DNDEBUG -LDFLAGS -shared\ /home/vortex/third_party/softfloat/build/Linux-x86_64-GCC/softfloat.a\ -Wl\,-rpath\,/home/vortex/third_party/ramulator\ \ -L/home/vortex/third_party/ramulator\ -lramulator --MMD --Mdir /home/vortex/build/runtime/rtlsim/../librtlsim.so.obj_dir -o /home/vortex/build/runtime/rtlsim/../librtlsim.so
+make[1]: *** [Makefile:120: /home/vortex/build/runtime/rtlsim/../librtlsim.so] Error 2
+make: *** [Makefile:39: /home/vortex/build/runtime/rtlsim/../librtlsim.so] Error 2

@@ -1,0 +1,172 @@
+during RTL pass: reload
+during RTL pass: postreload
+during GIMPLE pass: fre
+during GIMPLE pass: pre
+during RTL pass: reload
+during GIMPLE pass: pre
+during RTL pass: combine
+during GIMPLE pass: ccp
+during GIMPLE pass: fre
+during GIMPLE pass: alias
+during GIMPLE pass: fre
+during RTL pass: reload
+during GIMPLE pass: fre
+during GIMPLE pass: fre
+during RTL pass: cse2
+during RTL pass: reload
+during RTL pass: expand
+during RTL pass: ce3
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__20.o] Error 4
+make[2]: *** Waiting for unfinished jobs....
+during RTL pass: ira
+during GIMPLE pass: pre
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__9.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_h76d00735__1__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_h76d00735__2__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__10.o] Error 4
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__2__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__17.o] Error 4
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__3__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__4__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__9__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__11.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__12__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__19.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__13__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__7.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__11__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__6__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+g++: internal compiler error: Bus error signal terminated program cc1plus
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__7.o] Error 4
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__2.o] Error 4
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_hcd27c75d__1__Slow.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__23.o] Error 4
+during RTL pass: sched2
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim___024root__DepSet_h76d00735__4__Slow.o] Error 4
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__18.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__0.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__12.o] Error 4
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim_VX_fpu_dpi__N20_O3__DepSet_h423b1995__12.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__16.o] Error 4
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:269: Vrtlsim_shim___024root__DepSet_hcd27c75d__14.o] Error 4
+during GIMPLE pass: fre
+g++: internal compiler error: Bus error signal terminated program cc1plus
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <file:///usr/share/doc/gcc-11/README.Bugs> for instructions.
+make[2]: *** [/home/tools/verilator/share/verilator/include/verilated.mk:272: Vrtlsim_shim__Syms.o] Error 4
+%Error: make -C /home/vortex/build/runtime/rtlsim/../librtlsim.so.obj_dir -f Vrtlsim_shim.mk -j 192 exited with 2
+%Error: Command Failed ulimit -s unlimited 2>/dev/null; exec /home/tools/verilator/share/verilator/bin/verilator_bin --build --exe --language 1800-2009 --assert -Wall -Wpedantic -Wno-DECLFILENAME -Wno-REDEFMACRO --x-initial unique --x-assign unique verilator.vlt -DSIMULATION -DSV_DPI -DXLEN_32 -DNUM_CORES=2 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=2 -DCUT_CYCLE=10000 -DPERF_ENABLE -I/home/vortex/sim/rtlsim -I/home/vortex/hw/rtl -I/home/vortex/hw/dpi -I/home/vortex/hw/rtl/libs -I/home/vortex/hw/rtl/interfaces -I/home/vortex/hw/rtl/core -I/home/vortex/hw/rtl/mem -I/home/vortex/hw/rtl/cache -I/home/vortex/hw/rtl/fpu /home/vortex/hw/rtl/VX_gpu_pkg.sv /home/vortex/hw/rtl/fpu/VX_fpu_pkg.sv /home/vortex/hw/rtl/VX_trace_pkg.sv --cc rtlsim_shim --top-module rtlsim_shim -j 192 -DNDEBUG /home/vortex/sim/common/util.cpp /home/vortex/sim/common/mem.cpp /home/vortex/sim/common/softfloat_ext.cpp /home/vortex/sim/common/rvfloats.cpp /home/vortex/sim/common/dram_sim.cpp /home/vortex/hw/dpi/util_dpi.cpp /home/vortex/hw/dpi/float_dpi.cpp /home/vortex/sim/rtlsim/processor.cpp -CFLAGS -std=c++17\ -Wall\ -Wextra\ -Wfatal-errors\ -Wno-array-bounds\ -fPIC\ -Wno-maybe-uninitialized\ -I/home/vortex/build/hw\ -I/home/vortex/sim/common\ -I/home/vortex/third_party/softfloat/source/include\ -I/home/vortex/third_party/ramulator/ext/spdlog/include\ -I/home/vortex/third_party/ramulator/ext/yaml-cpp/include\ -I/home/vortex/third_party/ramulator/src\ -DXLEN_32\ -DNUM_CORES=2\ -DNUM_WARPS=32\ -DNUM_THREADS=32\ -DCUT_FACTOR=2\ -DCUT_CYCLE=10000\ -DPERF_ENABLE\ -O2\ -DNDEBUG -LDFLAGS -shared\ /home/vortex/third_party/softfloat/build/Linux-x86_64-GCC/softfloat.a\ -Wl\,-rpath\,/home/vortex/third_party/ramulator\ \ -L/home/vortex/third_party/ramulator\ -lramulator --MMD --Mdir /home/vortex/build/runtime/rtlsim/../librtlsim.so.obj_dir -o /home/vortex/build/runtime/rtlsim/../librtlsim.so
+make[1]: *** [Makefile:120: /home/vortex/build/runtime/rtlsim/../librtlsim.so] Error 2
+make: *** [Makefile:39: /home/vortex/build/runtime/rtlsim/../librtlsim.so] Error 2

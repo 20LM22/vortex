@@ -9,7 +9,7 @@
 #SBATCH --export=ALL
 #SBATCH --output=%x.o%j
 #SBATCH --error=%x.e%j
-#SBATCH --array=1
+#SBATCH --array=32
 
 cores=1 # 2
 warps=32
@@ -18,6 +18,14 @@ kernel=tranpose # sgemm2
 cutcycle=10000
 tile_size=8 # 32
 problem_size=128 # 64
+
+VORTEX_IMAGE="/scratch/gpfs/WENTZLAF/lm4677/differential_arch/vortex/miscs/apptainer/vortex.sif"
+OG_VORTEX="/scratch/gpfs/WENTZLAF/lm4677/differential_arch/vortex"
+TOOLS="/scratch/gpfs/WENTZLAF/lm4677/differential_arch/tools"
+
+LOCAL_VORTEX="/tmp/vortex_run_${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
+mkdir -p "$LOCAL_VORTEX"
+cp -r "$OG_VORTEX/." "$LOCAL_VORTEX/"
 
 cut_factor=$SLURM_ARRAY_TASK_ID
 
@@ -29,16 +37,14 @@ file_perf="${cut_factor}_${problem_size}_${tile_size}_${cores}_${warps}_${thread
 
 echo "start file" >  multi_cycle_cut_output.csv
 
-VORTEX_IMAGE="/scratch/gpfs/WENTZLAF/lm4677/differential_arch/vortex/miscs/apptainer/vortex.sif"
-
 apptainer exec --cleanenv --writable-tmpfs \
-  --bind /scratch/gpfs/WENTZLAF/lm4677/differential_arch/vortex:/home/vortex \
-  --bind /scratch/gpfs/WENTZLAF/lm4677/differential_arch/tools:/home/tools \
+  --bind "${LOCAL_VORTEX}:/home/vortex" \
+  --bind "${TOOLS}:/home/tools" \
   $VORTEX_IMAGE bash -c "
     cd /home/vortex/build && \
     source ./ci/toolchain_env.sh && \
     ./ci/blackbox.sh \
-  --cores=$cores --warps=$warps --threads=$threads --app=sgemm2 --driver=rtlsim \
+  --cores=$cores --warps=$warps --threads=$threads --app=$kernel --driver=rtlsim \
   --cutfactor=$cut_factor --cutcycle=$cutcycle \
   --perf=2 --args='-n$problem_size -t$tile_size'" > "$file_full"
 
@@ -53,7 +59,7 @@ grep "^PERF: instrs" "$file_full" > "$file_perf"
 # done
 
 # add different kernels to compare against
-./build/ci/blackbox.sh --cores=1 --warps=32 --threads=32 --app=transpose --driver=rtlsim --cutfactor=1 --cutcycle=10000 --perf=2 --args="-n128 -t8"
+# ./build/ci/blackbox.sh --cores=2 --warps=8 --threads=8 --app=sgemm2 --driver=rtlsim --cutfactor=8 --cutcycle=10000 --perf=2 --args="-n64 -t8"
 # cores=2
 # warps=32 <-- try to make it larger over time
 # threads=32

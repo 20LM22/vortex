@@ -48,6 +48,14 @@ void kernel_body(kernel_arg_t *arg) {
 }
 
 int main() {
+  // process the task with this arg
   auto arg = (kernel_arg_t*)csr_read(VX_CSR_MSCRATCH);
-	return vx_spawn_threads(2, arg->grid_dim, arg->block_dim, (vx_kernel_func_cb)kernel_body, arg);
+  return vx_spawn_threads(2, arg->grid_dim, arg->block_dim, (vx_kernel_func_cb)kernel_body, arg);
+  
+  // while (true) {
+  //   int task_id = atomicAdd(&global_counter, 1);
+  //   if (task_id >= num_tasks) {
+  //     break;
+  //   }
+  // }
 }

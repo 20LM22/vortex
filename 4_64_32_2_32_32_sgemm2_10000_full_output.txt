@@ -1,0 +1,69 @@
+DEBUG: Processing argument: --cores=2
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=4
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n64 -t32
+CONFIGS=-DNUM_CORES=2 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=2 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=4 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n64 -t32" make -C "./ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+LD_LIBRARY_PATH=/home/vortex/build/runtime:/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n64 -t32
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=2, num_clusters=1, socket_size=2, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 64x64
+tile size: 32x32
+local memory: 8192 bytes
+occupancy: max_localmem=16384 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x14000
+C_addr=0x18000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+download destination buffer
+verify result
+cleanup
+PERF: core0: lmem reads=262144
+PERF: core0: lmem writes=8192
+PERF: core0: lmem bank stalls=0 (utilization=100%)
+PERF: core0: icache reads=110157
+PERF: core0: icache read misses=402 (hit ratio=99%)
+PERF: core0: icache mshr stalls=119028 (utilization=0%)
+PERF: core0: dcache reads=112167
+PERF: core0: dcache writes=109478
+PERF: core0: dcache read misses=87521 (hit ratio=21%)
+PERF: core0: dcache write misses=109322 (hit ratio=0%)
+PERF: core0: dcache bank stalls=134151 (utilization=62%)
+PERF: core0: dcache mshr stalls=833594 (utilization=19%)
+PERF: core0: coalescer misses=49856 (hit ratio=77%)
+PERF: core0: instrs=1736514, cycles=1556437, IPC=1.115698
+PERF: core1: lmem reads=262144
+PERF: core1: lmem writes=8192
+PERF: core1: lmem bank stalls=0 (utilization=100%)
+PERF: core1: icache reads=109900
+PERF: core1: icache read misses=395 (hit ratio=99%)
+PERF: core1: icache mshr stalls=119028 (utilization=0%)
+PERF: core1: dcache reads=109829
+PERF: core1: dcache writes=109438
+PERF: core1: dcache read misses=85198 (hit ratio=22%)
+PERF: core1: dcache write misses=109304 (hit ratio=0%)
+PERF: core1: dcache bank stalls=131982 (utilization=62%)
+PERF: core1: dcache mshr stalls=820270 (utilization=19%)
+PERF: core1: coalescer misses=49856 (hit ratio=77%)
+PERF: core1: instrs=1736514, cycles=1536021, IPC=1.130527
+PERF: memory requests=195539 (reads=85947, writes=109592)
+PERF: memory latency=208 cycles
+PERF: memory bank stalls=0 (utilization=100%)
+PERF: instrs=3473028, cycles=1556437, IPC=2.231396
+PASSED!
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'

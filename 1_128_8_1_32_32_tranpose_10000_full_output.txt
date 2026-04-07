@@ -1,0 +1,12 @@
+DEBUG: Processing argument: --cores=1
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=1
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t8
+CONFIGS=-DNUM_CORES=1 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=1 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=1 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./ci/../runtime/rtlsim > /dev/null
+Error building driver: ./ci/../runtime/rtlsim

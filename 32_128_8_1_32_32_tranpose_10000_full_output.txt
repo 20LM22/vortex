@@ -1,0 +1,58 @@
+DEBUG: Processing argument: --cores=1
+DEBUG: Processing argument: --warps=32
+DEBUG: Processing argument: --threads=32
+DEBUG: Processing argument: --app=sgemm2
+DEBUG: Processing argument: --driver=rtlsim
+DEBUG: Processing argument: --cutfactor=32
+DEBUG: Processing argument: --cutcycle=10000
+DEBUG: Processing argument: --perf=2
+DEBUG: Processing argument: --args=-n128 -t8
+CONFIGS=-DNUM_CORES=1 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE
+Running: CONFIGS="-DNUM_CORES=1 -DNUM_WARPS=32 -DNUM_THREADS=32 -DCUT_FACTOR=32 -DCUT_CYCLE=10000 -DPERF_ENABLE" make -C ./ci/../runtime/rtlsim > /dev/null
+Running: OPTS="-n128 -t8" make -C "./ci/../tests/regression/sgemm2" run-rtlsim
+make: Entering directory '/home/vortex/build/tests/regression/sgemm2'
+g++ -std=c++17 -Wall -Wextra -pedantic -Wfatal-errors -I/home/vortex/runtime/include -I/home/vortex/build/hw -I/home/vortex/sim/common  -O2 -DNDEBUG -MM /home/vortex/tests/regression/sgemm2/main.cpp > .depend;
+g++ -std=c++17 -Wall -Wextra -pedantic -Wfatal-errors -I/home/vortex/runtime/include -I/home/vortex/build/hw -I/home/vortex/sim/common  -O2 -DNDEBUG /home/vortex/tests/regression/sgemm2/main.cpp -L/home/vortex/build/runtime -lvortex -o sgemm2
+/home/tools/llvm-vortex/bin/clang++ --sysroot=/home/tools/riscv32-gnu-toolchain/riscv32-unknown-elf --gcc-toolchain=/home/tools/riscv32-gnu-toolchain -Xclang -target-feature -Xclang +vortex -Xclang -target-feature -Xclang +zicond -mllvm -disable-loop-idiom-all  -march=rv32imaf -mabi=ilp32f -O3 -mcmodel=medany -fno-rtti -fno-exceptions -nostartfiles -nostdlib -fdata-sections -ffunction-sections -I/home/vortex/kernel/include -I/home/vortex/build/hw -I/home/vortex/sim/common -DXLEN_32 -DNDEBUG  /home/vortex/tests/regression/sgemm2/kernel.cpp -Wl,-Bstatic,--gc-sections,-T,/home/vortex/kernel/scripts/link32.ld,--defsym=STARTUP_ADDR=0x80000000 /home/vortex/build/kernel/libvortex.a -L/home/tools/libc32/lib -lm -lc /home/tools/libcrt32/lib/baremetal/libclang_rt.builtins-riscv32.a -o kernel.elf
+OBJCOPY=/home/tools/llvm-vortex/bin/llvm-objcopy /home/vortex/kernel/scripts/vxbin.py kernel.elf kernel.vxbin
+LD_LIBRARY_PATH=/home/vortex/build/runtime:/opt/boost-1.66/lib:/opt/openssl-1.1/lib::/.singularity.d/libs VORTEX_DRIVER=rtlsim ./sgemm2 -n128 -t8
+open device connection
+CONFIGS: num_threads=32, num_warps=32, num_cores=1, num_clusters=1, socket_size=1, local_mem_base=0xffff0000, num_barriers=16
+data type: float
+matrix size: 128x128
+tile size: 8x8
+local memory: 512 bytes
+occupancy: max_localmem=1024 bytes
+allocate device memory
+A_addr=0x10000
+B_addr=0x20000
+C_addr=0x30000
+allocate host buffers
+upload source buffer0
+upload source buffer1
+Upload kernel binary
+upload kernel argument
+start device
+wait for completion
+download destination buffer
+verify result
+cleanup
+PERF: core0: lmem reads=4194304
+PERF: core0: lmem writes=524288
+PERF: core0: lmem bank stalls=0 (utilization=100%)
+PERF: core0: icache reads=893791
+PERF: core0: icache read misses=296 (hit ratio=99%)
+PERF: core0: icache mshr stalls=94754 (utilization=0%)
+PERF: core0: dcache reads=754451
+PERF: core0: dcache writes=225747
+PERF: core0: dcache read misses=376048 (hit ratio=50%)
+PERF: core0: dcache write misses=200720 (hit ratio=11%)
+PERF: core0: dcache bank stalls=332940 (utilization=74%)
+PERF: core0: dcache mshr stalls=1063955 (utilization=35%)
+PERF: core0: coalescer misses=418688 (hit ratio=57%)
+PERF: memory requests=536790 (reads=310984, writes=225806)
+PERF: memory latency=90 cycles
+PERF: memory bank stalls=0 (utilization=100%)
+PERF: instrs=28577587, cycles=8389567, IPC=3.406324
+PASSED!
+make: Leaving directory '/home/vortex/build/tests/regression/sgemm2'
